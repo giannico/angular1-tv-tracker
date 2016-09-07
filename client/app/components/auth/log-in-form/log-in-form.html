@@ -1,0 +1,26 @@
+<form name="$ctrl.logInForm"
+    class="form-signin"
+    novalidate
+    ng-submit="$ctrl.submitFormHandler($ctrl.formData)">
+
+    <input
+        type="text"
+        class="form-control" placeholder="Email"
+        ng-model="$ctrl.formData.email"
+        required autofocus>
+
+    <input type="password"
+        class="form-control"
+        placeholder="Password"
+        ng-model="$ctrl.formData.password"
+        required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit"
+        ng-disabled="!$ctrl.logInForm.$valid">Log In</button>
+
+    <div class="alert alert-danger" role="alert"
+        ng-if="$ctrl.errorMessage">
+        {{$ctrl.errorMessage}}
+    </div>
+
+</form>

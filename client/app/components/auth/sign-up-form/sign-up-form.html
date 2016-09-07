@@ -1,0 +1,32 @@
+<form name="$ctrl.signUpForm"
+    class="form-signin"
+    novalidate
+    ng-submit="$ctrl.submitFormHandler($ctrl.formData)">
+
+    <input
+        type="text"
+        class="form-control" placeholder="Name"
+        ng-model="$ctrl.formData.name"
+        required autofocus>
+
+    <input
+        type="text"
+        class="form-control" placeholder="Email"
+        ng-model="$ctrl.formData.email"
+        required>
+
+    <input type="password"
+        class="form-control"
+        placeholder="Password"
+        ng-model="$ctrl.formData.password"
+        required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit"
+        ng-disabled="!$ctrl.signUpForm.$valid">Sign Up</button>
+
+    <div class="alert alert-danger" role="alert"
+        ng-if="$ctrl.errorMessage">
+        {{$ctrl.errorMessage}}
+    </div>
+
+</form>

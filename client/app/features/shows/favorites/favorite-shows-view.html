@@ -1,0 +1,8 @@
+<div ng-if="$ctrl.shows.length == 0" class="alert alert-success" role="alert">
+    <strong>Add some shows!</strong> You don't currently have any favorites.
+</div>
+
+<div class="row">
+    <shows-grid shows="$ctrl.shows" user="$ctrl.user"></shows-grid>
+</div>
+

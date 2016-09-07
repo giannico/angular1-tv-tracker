@@ -1,0 +1,21 @@
+<nav>
+  <ul class="nav nav-pills">
+    <li role="presentation" ui-sref-active="active"><a ui-state="$ctrl.APP_STATES.SHOWS.LIST">Shows</a></li>
+    <!--<li role="presentation" ui-sref-active="active"><a ui-state="$ctrl.APP_STATES.SHOWS.SEARCH">Search</a></li>-->
+    <li role="presentation" ui-sref-active="active" show-auth>
+      <a ui-state="$ctrl.APP_STATES.SHOWS.FAVORITES">Favorites <span class="badge">{{($ctrl.user.favoriteShows.length)}}</span></a>
+    </li>
+    <ul class="pager pull-right" ng-if="$ctrl.isShowsListViewActive()">
+      <li class="next">
+        <a ui-state="$ctrl.APP_STATES.SHOWS.LIST" ui-state-params="{ page: $ctrl.page + 1 }">Next <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="previous" ng-hide="$ctrl.page <= 0">
+        <a ui-state="$ctrl.APP_STATES.SHOWS.LIST" ui-state-params="{ page: $ctrl.page - 1}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    </ul>
+  </ul>
+
+</nav>
+
+<div class="tab-content">
+    <ui-view></ui-view>
+</div>

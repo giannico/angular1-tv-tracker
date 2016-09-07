@@ -1,0 +1,26 @@
+{
+    "rules": {
+        "users": {
+            "$uid": {
+                ".read": "$uid === auth.uid",
+                ".write": "$uid === auth.uid",
+                "profile": {
+                    ".validate": "newData.hasChildren(['name'])",
+                    "name": {
+                        ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 50"
+                    },
+                    "favoriteShows": {
+                        "$showId": {
+                            ".validate": "root.child('shows').hasChild($showId)"
+                        }
+                    }
+                }
+            }
+        },
+        "shows": {
+            ".read": true,
+            ".write": true,
+            ".indexOn": ["id"]
+        }
+    }
+}

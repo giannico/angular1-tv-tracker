@@ -1,0 +1,11 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.tab-content {
+  padding-top: 10px;
+}
+
+nav .pager {
+  margin: 0px
+}

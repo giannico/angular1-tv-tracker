@@ -1,0 +1,10 @@
+<div class="alert alert-warning" role="alert">
+    <strong>Warning!</strong> Your email address is used to log in and for all of our communication with you, please make sure it is a working email address.
+</div>
+
+<change-email-form
+    class="col-md-5"
+    user="$ctrl.user"
+    error-message="$ctrl.errorMessage"
+    on-submit="$ctrl.changeEmail($event)"
+    on-cancel="$ctrl.navigateToMyProfile()"></change-email-form>

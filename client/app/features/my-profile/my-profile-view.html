@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-3">
+        <p>
+            <span class="glyphicon glyphicon-user"></span>
+            {{$ctrl.user.profile.name}}
+        <p>
+        <p>
+            <span class="glyphicon glyphicon-envelope"></span>
+            {{$ctrl.user.email}}
+        <p>
+        <p>
+            <a ui-state="$ctrl.APP_STATES.CHANGE_EMAIL">Change your email</a>
+        </p>
+        <p>
+            <a ui-state="$ctrl.APP_STATES.CHANGE_PASSWORD">Change your password</a>
+        </p>
+    </div>
+    <div class="col-md-9">
+        <div class="alert alert-success">
+            You have <strong>{{$ctrl.user.favoriteShows.length}} favorite shows.</strong>
+        </div>
+    </div>
+</div>

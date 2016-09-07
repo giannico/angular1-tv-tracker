@@ -1,0 +1,8 @@
+{
+    "firebaseOptions": {
+        "apiKey": "AIzaSyDWFsvCyFJN7Tdt8FXkmJYODp1qwbap3o0",
+        "authDomain": "tv-tracker-73580.firebaseapp.com",
+       "databaseURL": "https://tv-tracker-73580.firebaseio.com",
+        "storageBucket": "tv-tracker-73580.appspot.com"
+    }
+}
