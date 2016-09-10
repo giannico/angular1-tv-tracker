@@ -8,16 +8,19 @@ import { app, auth } from 'firebase';
 const angularfireMod = require('angularfire');
 const angularToastrMod = require('angular-toastr');
 const dropdownMod = require('angular-ui-bootstrap/src/dropdown');
+const angularLoadingBarMod = require('angular-loading-bar');
 
 // vendor css
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-toastr/dist/angular-toastr.css';
+import 'angular-loading-bar/src/loading-bar.css';
 
 const vendorModule = angular.module('vendor', [
     angularUiRouterMod,
     angularfireMod,
     angularToastrMod,
-    dropdownMod
+    dropdownMod,
+    angularLoadingBarMod
 ]);
 
 export { vendorModule };

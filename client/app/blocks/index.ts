@@ -2,9 +2,11 @@
 // application-specific functionality.
 import * as angular from 'angular';
 import agFirebaseMod from './ag-firebase';
+import stateStateLoadingBarMod from './state-loading-bar';
 
 const mod = angular.module('blocks', [
-    agFirebaseMod
+    agFirebaseMod,
+    stateStateLoadingBarMod
 ]);
 
 export default mod.name;

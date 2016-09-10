@@ -10,6 +10,7 @@ function configureApp(mod: angular.IModule): void {
     mod.run(configureStateChangeErrorHandler);
     mod.config(configureToastr);
     mod.config(configureGlobalResolves);
+    mod.run(enableStateLoadingBar);
 
     /////////////////////////
 
@@ -69,9 +70,7 @@ function configureApp(mod: angular.IModule): void {
     /*@ngInject*/
     function configureGlobalResolves($transitionsProvider) {
 
-        $transitionsProvider.onStart({
-            to: () => true
-        }, ($transition$) => {
+        $transitionsProvider.onStart({}, ($transition$) => {
             const authManagerResolvable = new Resolvable({
                 token: 'authManager',
                 deps: ['authManager'],
@@ -82,6 +81,14 @@ function configureApp(mod: angular.IModule): void {
 
             $transition$.addResolvable(authManagerResolvable);
         });
+    }
+
+    function enableStateLoadingBar(stateLoadingBar) {
+        stateLoadingBar.setOptions({
+            loadingThreshold: 50
+        });
+
+        stateLoadingBar.enable();
     }
 }
 
